@@ -1,4 +1,4 @@
-from tkinter import *
+import thkinter
 import time
 import sqlite3
 import random
@@ -6,22 +6,16 @@ import tempfile
 import win32api
 import win32print
 
-f = ''
-flag = ''
-flags = ''
-
+global c, cur, flag, rev
 login = sqlite3.connect("admin.db")
 l = login.cursor()
-
 c = sqlite3.connect("medicine.db")
 cur = c.cursor()
 
 columns = ('Sl No', 'Name', 'Type', 'Quantity Left', 'Cost', 'Purpose', 'Expiry Date', 'Rack location', 'Manufacture')
 
 def show_rev():
-    global c, cur, flag, rev
     apt.destroy()
-    cb = ('cus_name', 'cus_add', 'items', 'Total_cost', 'bill_dt', 'bill_no', 'bill', 'val_id')
     flag = 'rev'
     rev = Tk()
     total = 0.0
